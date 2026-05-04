@@ -172,11 +172,14 @@
       <div class="tags">
         <span class="tag">Flow Designer</span>
         <span class="tag">AI Automation</span>
+        <span class="tag">Now Assist</span>
+        <span class="tag">Virtual Agent</span>
+        <span class="tag">Predictive Intelligence</span>
+        <span class="tag">IntegrationHub</span>
         <span class="tag">Catalog</span>
         <span class="tag">RITM</span>
         <span class="tag">ITSM</span>
-        <span class="tag">SPL Dashboards</span>
-        <span class="tag">Alerts</span>
+        <span class="tag">SOW</span>
       </div>
     </div>
     <div class="skill-card">
@@ -245,38 +248,61 @@
   <div class="section-label">Background</div>
   <div class="section-title">Work experience</div>
   <div class="timeline">
+
     <div class="tl-item">
-      <div class="tl-date">Feb 2026 – Jun 2026</div>
+      <div class="tl-date">Feb 2026 – Present</div>
       <div>
-        <div class="tl-title">IT Analyst Intern</div>
+        <div class="tl-title">IT Cyber Analyst Intern</div>
         <div class="tl-org">County of Fresno</div>
-        <ul class="tl-bullets">
-          <li>Supported IT operations and service desk activities across county departments</li>
-          <li>Assisted with Active Directory user provisioning and access management</li>
-          <li>Monitored and analyzed system logs using Splunk to flag security events</li>
-        </ul>
+        <p class="tl-desc" style="margin-bottom:0.75rem;">My day-to-day was a mix of ServiceNow development, security automation design, and operational support. I reviewed incoming incidents and service requests to identify patterns that could be automated, built and refined workflows in Flow Designer, tested flows in sub-production environments, and collaborated with sysadmins and helpdesk teams to ensure automations aligned with real operational needs.</p>
+
+        <p style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:0.4rem;">Identity &amp; Access Management (IAM)</p>
+        <p class="tl-desc" style="margin-bottom:0.75rem;">I designed an automated identity provisioning workflow that enforced role-based access control (RBAC) during user onboarding. The workflow checked whether the user was a new hire or returning employee — for new hires it automatically triggered Active Directory account creation via IntegrationHub, assigned role-based group memberships, created a workstation request, initiated ID card provisioning, allocated a workspace, and triggered software installation based on the user's role. All access assignments required manager approval before being executed, preventing over-provisioning and privilege escalation. MFA was enforced at the identity level through Azure AD (Microsoft Entra ID).</p>
+
+        <p style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:0.4rem;">6 Security-Enforcing Workflows</p>
+        <p class="tl-desc" style="margin-bottom:0.75rem;">Beyond onboarding, I architected 5 additional workflows — offboarding/termination (automatic AD account deactivation on HR incident creation, eliminating orphaned accounts), password reset automation, incident auto-routing by category, change request approval enforcement for high-risk actions, and security incident escalation with SLA enforcement. Together these reduced manual ticket-handling by ~30% and enforced consistent security policies across the organization.</p>
+
+        <p style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:0.4rem;">AI-Driven Incident Response</p>
+        <p class="tl-desc" style="margin-bottom:0.75rem;">I worked with multiple AI capabilities in ServiceNow — Virtual Agent for automating ticket creation and common requests, Now Assist for incident summarization and improving how ticket data is interpreted, and currently configuring Predictive Intelligence for ticket categorization and assignment based on historical data. This reduced cognitive load on helpdesk agents and cut average resolution time by 10%.</p>
+
+        <p style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:0.4rem;">Service Operations Workspace (SOW)</p>
+        <p class="tl-desc" style="margin-bottom:0.75rem;">I built and owned the Service Operations Workspace end-to-end — structuring workflows so tickets were automatically categorized, assigned to the correct teams, and updated dynamically based on activity. I also integrated data-encryption policies and standardized documentation hygiene, which improved AI model reporting accuracy. The completed system was delivered to the IT helpdesk and used in production.</p>
+
+        <p style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:0.4rem;">Audit &amp; Logging</p>
+        <p class="tl-desc">All identity actions — user creation, group membership changes, access assignments, and deprovisioning — were logged in Azure Active Directory and ServiceNow's workflow audit trail, creating a centralized, traceable record for compliance and security monitoring. In the event of an anomaly such as unauthorized privilege assignment, the response process involves reviewing audit logs, generating access reports, immediately revoking unauthorized roles, disabling the faulty workflow, correcting the logic, and implementing alerting for high-risk access events going forward.</p>
       </div>
     </div>
+
     <div class="tl-item">
-      <div class="tl-date">2023 – Present</div>
+      <div class="tl-date">Aug 2023 – Feb 2026</div>
       <div>
-        <div class="tl-title">Security-Focused IT Role</div>
-        <div class="tl-org">Fresno State Information Technology</div>
-        <ul class="tl-bullets">
-          <li>Administered ServiceNow catalog items, AI automation flows, and ITSM processes</li>
-          <li>Leveraged Splunk for log analysis and proactive security monitoring</li>
-          <li>Collaborated on identity and access management with Active Directory</li>
-        </ul>
+        <div class="tl-title">Cybersecurity Instructor</div>
+        <div class="tl-org">California State University, Fresno</div>
+        <p class="tl-desc" style="margin-bottom:0.75rem;">Delivered lab-intensive cybersecurity instruction to 30+ students per semester covering network security, vulnerability assessment, and NIST CSF frameworks. Lifted average lab-completion rates by 20% through structured, hands-on teaching.</p>
+        <p class="tl-desc" style="margin-bottom:0.75rem;">Directed practical labs using Nmap, Wireshark, and Nessus — training students to identify, analyze, and remediate phishing and social-engineering threats in simulated environments. Developed Python-based incident-response scripts used across 4 class projects, reinforcing structured threat-analysis methodology and MITRE ATT&CK alignment.</p>
+        <p class="tl-desc">Teaching cybersecurity concepts deepened my own understanding of how attacks work at a technical level — explaining threat modeling, vulnerability exploitation, and defensive controls to students forced a level of clarity that directly sharpened my practical skills.</p>
       </div>
     </div>
+
+    <div class="tl-item">
+      <div class="tl-date">Jan 2025 – Dec 2025</div>
+      <div>
+        <div class="tl-title">Cybersecurity Intern</div>
+        <div class="tl-org">California State University, Fresno — IT Department</div>
+        <p class="tl-desc" style="margin-bottom:0.75rem;">Supported security operations by implementing and maintaining security measures protecting campus network infrastructure from cyber threats. Configured network devices, troubleshot connectivity issues, and optimized network performance across campus systems.</p>
+        <p class="tl-desc">Administered Identity and Access Management (IAM) processes — handling user provisioning, access controls, and role assignments to enforce least-privilege principles. Contributed to documentation of network and system configurations, security procedures, and best practices adopted by the Technology Services team.</p>
+      </div>
+    </div>
+
     <div class="tl-item">
       <div class="tl-date">May 2026</div>
       <div>
         <div class="tl-title">B.S. Computer Science</div>
         <div class="tl-org">California State University, Fresno — Cybersecurity Specialization</div>
-        <p class="tl-desc">Graduating May 2026 with a specialization in cybersecurity.</p>
+        <p class="tl-desc">Graduating May 2026 with a specialization in cybersecurity, combining theoretical foundations with hands-on security lab work and real-world internship experience.</p>
       </div>
     </div>
+
   </div>
 </section>
 
