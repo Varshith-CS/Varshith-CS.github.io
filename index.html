@@ -69,7 +69,7 @@
   .cert { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 13px; }
   .cert-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .projects-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
   .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.2s; }
   .project-card:hover { border-color: #aac0d6; }
   .project-icon { width: 36px; height: 36px; background: var(--accent-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
@@ -252,6 +252,33 @@
       </div>
       <div class="project-tags">
         <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">pandas</span><span class="tag">NumPy</span><span class="tag">matplotlib</span><span class="tag">GridSearchCV</span><span class="tag">Jupyter</span><span class="tag">Kaggle</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-icon">🔬</div>
+      <div class="project-title">Cybersecurity Lab Series — 9 Hands-on Security Labs</div>
+      <div class="project-desc">Completed a rigorous series of 9 cybersecurity labs covering the full spectrum of offensive and defensive security techniques in controlled environments.<br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Lab 1 — Vulnerability Assessment</span><br>
+        <span style="font-size:12px;color:var(--muted);">Scanned networks using Nmap and Zenmap, identified open ports, services, and OS details, and ran vulnerability scans using Nessus and OpenVAS. Analyzed real vulnerabilities such as SNMP DDoS exposure and proposed remediation steps.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Lab 2 — Packet Capture and Traffic Analysis</span><br>
+        <span style="font-size:12px;color:var(--muted);">Captured and analyzed live network traffic using Wireshark. Inspected protocols including ICMP, FTP, HTTP, and SSH. Compared encrypted vs unencrypted traffic to understand data exposure risks.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Lab 3 — Authentication and Access Control</span><br>
+        <span style="font-size:12px;color:var(--muted);">Created users and groups in Active Directory, configured folder permissions, and tested authorized vs unauthorized access scenarios to understand how organizations enforce least-privilege access.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Lab 4 — Encryption</span><br>
+        <span style="font-size:12px;color:var(--muted);">Generated public and private key pairs using asymmetric encryption. Encrypted and decrypted files using OpenSSL and Kleopatra to understand how data confidentiality and integrity are protected.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Lab 5 — Attack Vectors</span><br>
+        <span style="font-size:12px;color:var(--muted);">Performed XSS and injection attacks on web applications, created malware payloads using Metasploit, and simulated DDoS and phishing attacks to understand how attackers exploit real systems.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Lab 6 — Security Policies</span><br>
+        <span style="font-size:12px;color:var(--muted);">Configured password policies and antivirus policies, applied Group Policy (GPO) in Windows environments, and secured Android device settings to enforce security rules across different platforms.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Lab 7 — Monitoring and Logging</span><br>
+        <span style="font-size:12px;color:var(--muted);">Used Windows Event Viewer to track login attempts, monitored network traffic with Snort IDS, and verified file integrity using Tripwire to detect and monitor threats in real time.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Lab 8 — Backup and Recovery</span><br>
+        <span style="font-size:12px;color:var(--muted);">Configured Windows Server Backup, performed system restores, and set up NFS shares and load balancing using HAProxy to maintain availability and recover systems after failure.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Lab 9 — Incident Response and Forensics</span><br>
+        <span style="font-size:12px;color:var(--muted);">Analyzed PCAP files using NetWitness, investigated disk images using Autopsy, and uncovered evidence of a keylogger and credential leak. Created full incident response reports documenting findings and recommended remediation.</span>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Nmap</span><span class="tag">Nessus</span><span class="tag">OpenVAS</span><span class="tag">Wireshark</span><span class="tag">Metasploit</span><span class="tag">Snort</span><span class="tag">Autopsy</span><span class="tag">Active Directory</span><span class="tag">GPO</span><span class="tag">OpenSSL</span><span class="tag">Tripwire</span><span class="tag">NetWitness</span><span class="tag">HAProxy</span><span class="tag">Kali Linux</span>
       </div>
     </div>
   </div>
