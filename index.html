@@ -166,6 +166,13 @@
         <span class="tag">TCP/IP</span>
         <span class="tag">Linux</span>
         <span class="tag">Windows</span>
+        <span class="tag">CloudTrail</span>
+        <span class="tag">CloudWatch</span>
+        <span class="tag">SNS</span>
+        <span class="tag">Prowler</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Nginx</span>
+        <span class="tag">GitHub Actions</span>
       </div>
     </div>
     <div class="skill-card">
@@ -208,6 +215,25 @@
         <span class="tag">Machine Learning</span>
       </div>
     </div>
+    <div class="skill-card">
+      <div class="skill-card-title">DevSecOps &amp; App Security</div>
+      <div class="tags">
+        <span class="tag">Bandit</span>
+        <span class="tag">pip-audit</span>
+        <span class="tag">GitLeaks</span>
+        <span class="tag">Trivy</span>
+        <span class="tag">OWASP ZAP</span>
+        <span class="tag">SAST</span>
+        <span class="tag">DAST</span>
+        <span class="tag">SCA</span>
+        <span class="tag">JWT</span>
+        <span class="tag">Flask</span>
+        <span class="tag">Docker</span>
+        <span class="tag">CI/CD Security</span>
+        <span class="tag">OWASP Top 10</span>
+        <span class="tag">Secret Management</span>
+      </div>
+    </div>
   </div>
   <div class="cert-row">
     <div class="cert"><span class="cert-dot"></span>CompTIA Security+</div>
@@ -243,6 +269,38 @@
         <span class="tag">Nmap</span><span class="tag">Nessus</span><span class="tag">OpenVAS</span><span class="tag">Kali Linux</span>
       </div>
     </div>
+    <div class="project-card">
+      <div class="project-icon">☁️</div>
+      <div class="project-title">AWS Cloud IAM Security Assessment &amp; Remediation Lab</div>
+      <div class="project-desc">Simulated and remediated AWS IAM security risks in a controlled cloud environment, covering the full security lifecycle from vulnerability creation and exploitation through detection, remediation, and validation.<br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Vulnerabilities Identified &amp; Remediated</span><br>
+        <span style="font-size:12px;color:var(--muted);">Over-permissive IAM policy (wildcard *:*), privilege escalation via AssumeRole abuse, publicly exposed S3 bucket with sensitive credentials, missing CloudTrail logging, and MFA disabled — all identified and fully remediated.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Detection &amp; Monitoring</span><br>
+        <span style="font-size:12px;color:var(--muted);">Configured multi-region CloudTrail to capture IAM activity, API calls, and role assumptions. Built CloudWatch metric filters and alarms for root account logins and console access without MFA. Integrated SNS for automated email alerting — simulating a real SOC alerting pipeline.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Validation Results (Prowler)</span><br>
+        <span style="font-size:12px;color:var(--muted);">Failed findings reduced from 216 → 1 after remediation. Privilege escalation path fully blocked. Public S3 access disabled. CloudTrail and CloudWatch fully operational.</span>
+      </div>
+      <div class="project-tags">
+        <span class="tag">AWS IAM</span><span class="tag">S3</span><span class="tag">CloudTrail</span><span class="tag">CloudWatch</span><span class="tag">SNS</span><span class="tag">Prowler</span><span class="tag">MFA</span><span class="tag">NIST CSF</span><span class="tag">CIS Benchmark</span><span class="tag">Least Privilege</span><span class="tag">Detection Engineering</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🔐</div>
+      <div class="project-title">DevSecOps API Security Lab</div>
+      <div class="project-desc">Built a vulnerable containerized Flask API and implemented a full DevSecOps security pipeline to identify, remediate, and validate application security vulnerabilities across the entire SDLC.<br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Vulnerabilities Identified &amp; Remediated</span><br>
+        <span style="font-size:12px;color:var(--muted);">Broken Object Level Authorization (BOLA), broken function-level authorization on admin endpoints, sensitive data exposure, hardcoded JWT secrets, and missing HTTP security headers — all discovered through automated scanning and fully remediated.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Security Controls Implemented</span><br>
+        <span style="font-size:12px;color:var(--muted);">JWT authentication, Role-Based Access Control (RBAC), password hashing, secrets management via environment variables, Content Security Policy headers, and Nginx reverse proxy to hide framework details and centralize security headers.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Validation Results</span><br>
+        <span style="font-size:12px;color:var(--muted);">Bandit findings: 6 → 0 · pip-audit vulnerabilities: 9 → 0 · Trivy container vulnerabilities: 8 → 0 · OWASP ZAP findings reduced. GitHub Actions CI/CD pipeline automates all scans on every commit.</span>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">JWT</span><span class="tag">RBAC</span><span class="tag">GitHub Actions</span><span class="tag">Bandit</span><span class="tag">OWASP ZAP</span><span class="tag">Trivy</span><span class="tag">GitLeaks</span><span class="tag">DevSecOps</span><span class="tag">SAST</span><span class="tag">DAST</span>
+      </div>
+    </div>
+
     <div class="project-card">
       <div class="project-icon">🧬</div>
       <div class="project-title">Healthcare ML — Supervised Learning on Clinical Data</div>
