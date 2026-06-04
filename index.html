@@ -137,9 +137,14 @@
       <div class="tags">
         <span class="tag">NIST CSF</span>
         <span class="tag">NIST SP 800-30</span>
+        <span class="tag">NIST AI RMF</span>
         <span class="tag">CIS Controls</span>
         <span class="tag">OCTAVE Allegro</span>
         <span class="tag">MITRE ATT&amp;CK</span>
+        <span class="tag">SOC 2</span>
+        <span class="tag">GDPR</span>
+        <span class="tag">HIPAA</span>
+        <span class="tag">HITRUST</span>
         <span class="tag">Incident Response</span>
         <span class="tag">Risk Assessment</span>
         <span class="tag">Vulnerability Management</span>
@@ -263,8 +268,26 @@
         <span class="tag">Flask</span>
         <span class="tag">Docker</span>
         <span class="tag">CI/CD Security</span>
-        <span class="tag">OWASP Top 10</span>
+        <span class="tag">OWASP API Top 10</span>
+        <span class="tag">OWASP LLM Top 10</span>
         <span class="tag">Secret Management</span>
+        <span class="tag">Prompt Injection</span>
+        <span class="tag">RAG Security</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-title">AI Security</div>
+      <div class="tags">
+        <span class="tag">LangChain</span>
+        <span class="tag">OpenAI API</span>
+        <span class="tag">ChromaDB</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">RAG Security</span>
+        <span class="tag">Prompt Injection Testing</span>
+        <span class="tag">Sensitive Data Disclosure</span>
+        <span class="tag">OWASP LLM Top 10</span>
+        <span class="tag">NIST AI RMF</span>
+        <span class="tag">AI Security Controls</span>
       </div>
     </div>
   </div>
@@ -341,6 +364,28 @@
         View on GitHub
       </a>
     </div>
+    <div class="project-card">
+      <div class="project-icon">🤖</div>
+      <div class="project-title">AI Security &amp; RAG Security</div>
+      <div class="project-desc">Built a RAG-based chatbot using LangChain, OpenAI, and ChromaDB to retrieve information from internal company documents, then assessed it for real-world AI security risks including prompt injection, sensitive information disclosure, and context leakage.<br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Vulnerabilities Identified &amp; Remediated</span><br>
+        <span style="font-size:12px;color:var(--muted);">RAG context leakage exposing retrieved document content, sensitive information disclosure of employee and internal data, internal contact information extraction, and financial data disclosure including executive-level revenue and acquisition targets — all identified and fully remediated.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Attack Testing</span><br>
+        <span style="font-size:12px;color:var(--muted);">Executed 6 structured prompt injection and data leakage attack scenarios including system prompt extraction, instruction override, context extraction, and financial data disclosure attempts. 5 of 6 attacks succeeded pre-remediation.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Security Controls Implemented</span><br>
+        <span style="font-size:12px;color:var(--muted);">AI security controls layer with input filtering for prompt injection detection, output validation for sensitive data patterns, and access control enforcement to restrict document-level retrieval. Legitimate queries remained fully functional post-remediation.</span><br><br>
+        <span style="font-size:12px;font-weight:500;color:var(--text);">Validation Results</span><br>
+        <span style="font-size:12px;color:var(--muted);">Security findings: 4 → 0 · Successful attack scenarios: 5 → 0 · 100% of attack scenarios blocked. Mapped to OWASP Top 10 for LLM Applications and NIST AI Risk Management Framework.</span>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">OpenAI</span><span class="tag">ChromaDB</span><span class="tag">Streamlit</span><span class="tag">Prompt Injection</span><span class="tag">RAG Security</span><span class="tag">OWASP LLM Top 10</span><span class="tag">NIST AI RMF</span><span class="tag">AI Security</span>
+      </div>
+      <a href="https://github.com/Varshith-CS/ai-rag-security-lab" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--accent);text-decoration:none;margin-top:4px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+
 
     <div class="project-card">
       <div class="project-icon">🧬</div>
