@@ -184,6 +184,8 @@
   #work { position: relative; height: 420vh; background: var(--ink); color: var(--paper); }
   #work .stage { display: flex; flex-direction: column; justify-content: center; }
   .track { display: flex; gap: 28px; padding: 0 var(--gutter); will-change: transform; align-items: stretch; }
+  /* Trailing space so the last case file can travel to the center of the screen */
+  .track::after { content: ""; flex: 0 0 max(0px, calc((100vw - min(1060px, 84vw)) / 2 - 28px - var(--gutter))); }
   .panel { position: relative; flex: 0 0 min(1060px, 84vw); border-radius: 20px; padding: clamp(24px, 3.2vw, 44px); display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); background: var(--ink-2); min-height: min(560px, 72vh); }
   .panel.intro { background: transparent; flex-basis: min(560px, 80vw); display: flex; flex-direction: column; justify-content: center; padding-left: 0; }
   .intro .kicker { color: var(--accent-dark); }
@@ -392,6 +394,7 @@
     #work { height: auto; padding: 96px 0 64px; }
     #work .stage { position: static; height: auto; overflow: visible; }
     .track { flex-direction: column; transform: none !important; gap: 20px; }
+    .track::after { display: none; }
     .panel, .panel.intro { flex-basis: auto; grid-template-columns: 1fr; min-height: 0; }
     .lists { grid-template-columns: 1fr; }
     .proof { border-left: 0; padding-left: 0; border-top: 1px solid var(--line-dark); padding-top: 28px; }
@@ -1169,10 +1172,17 @@ JWT_SECRET = os.getenv("JWT_SECRET")</pre>
       const from = +d.dataset.from, to = +d.dataset.to;
       let t = 1;
       if (!reduce) {
-        const r = d.getBoundingClientRect();
-        t = horizontal()
-          ? ease(map(innerWidth - r.left, innerWidth * 0.2, innerWidth * 0.7))
-          : ease(map(innerHeight - r.top, innerHeight * 0.15, innerHeight * 0.6));
+        if (horizontal()) {
+          // Count down as the whole case file slides in; finish once it's centered on screen
+          const pr = d.closest('.panel').getBoundingClientRect();
+          const center = (pr.left + pr.width / 2) / innerWidth;
+          // Also wait until it has risen into view, so wide screens still see the count
+          const rise = map(innerHeight - pr.top, innerHeight * 0.1, innerHeight * 0.75);
+          t = ease(Math.min(map(1.15 - center, 0, 0.62), rise));
+        } else {
+          const r = d.getBoundingClientRect();
+          t = ease(map(innerHeight - r.top, innerHeight * 0.15, innerHeight * 0.6));
+        }
       }
       d.querySelector('.n').textContent = Math.round(from + (to - from) * t);
       const done = t > 0.98;
