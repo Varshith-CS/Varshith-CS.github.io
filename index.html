@@ -383,6 +383,10 @@
     .hush { width: 100%; height: 62%; background: linear-gradient(to top, var(--paper) 62%, color-mix(in srgb, var(--paper) 0%, transparent)); }
     .copy { width: auto; right: var(--gutter); bottom: 112px; }
     .copy h1 { font-size: clamp(2rem, 8.6vw, 2.6rem); }
+    .copy .wl-id { display: none; }
+    .copy .who-line { font-size: 14px; }
+    .copy h1 { margin-top: 6px; }
+    .node.mob-off { display: none; }
     .copy .lede { font-size: 15px; margin-top: 12px; }
     .actions { margin-top: 16px; gap: 6px; }
     .actions .btn { padding: 10px 13px; font-size: 14px; }
@@ -409,6 +413,7 @@
     .flow .track-line { left: 15px; }
   }
   @media (max-height: 760px) and (min-width: 901px) { .copy .lede { display: none; } }
+  @media (max-height: 620px) and (max-width: 900px) { .copy .lede { display: none; } }
 
   /* Reduced motion: no pinning, final states */
   .rm #assess { height: auto; }
@@ -454,7 +459,7 @@
       <div class="hush" aria-hidden="true"></div>
 
       <div class="copy">
-        <p class="who-line"><b>Varshith Nakkina</b>, security engineer. Based in Fresno, CA, open to relocation.</p>
+        <p class="who-line"><span class="wl-id"><b>Varshith Nakkina</b>, security engineer. </span>Based in Fresno, CA, open to relocation.</p>
         <h1 id="hero-title">I find what’s exposed, fix&nbsp;it, and prove the fix holds.</h1>
         <p class="lede">Security+, AWS, and Azure certified. I built <b>SOAR automation for a 5,000+ employee county government</b> and shipped <b>AegisCloud</b>, a production AWS security platform.</p>
         <div class="actions">
@@ -1082,19 +1087,45 @@ JWT_SECRET = os.getenv("JWT_SECRET")</pre>
   const copyEl = document.querySelector('.copy');
   let span = 0.8;
   // Fit the map into the space above the headline so the two never collide
+  // Phone layout: nodes in two staggered columns, sized to the space left above the headline.
+  const mobileOrder = ['iam:policy/dev-admin', 's3://internal-backups', 'iam:root', 'GET /users/{id}', 'requirements.txt', 'rag-chatbot'];
+  const mobileTight = ['iam:policy/dev-admin', 's3://internal-backups', 'GET /users/{id}', 'rag-chatbot'];
   function place() {
     const fr = field.getBoundingClientRect();
-    const avail = (copyEl.getBoundingClientRect().top - fr.top - 36) / fr.height;
-    const k = small() ? 1 : clamp(avail / 0.78, 0.45, 1);
+    const copyTop = copyEl.getBoundingClientRect().top;
     let maxY = 0;
-    nodeEls.forEach((el, i) => {
-      const n = nodes[i];
-      n.ry = small() && n.my != null ? n.my : n.y * k;
-      if (visible(el)) maxY = Math.max(maxY, n.ry);
-      el.style.setProperty('--x', small() && n.mx != null ? n.mx : n.x);
-      el.style.setProperty('--y', n.ry);
-    });
-    span = maxY / 100 + 0.06;
+    if (small()) {
+      const nodeH = 50, gapMin = 44;
+      const availPx = copyTop - fr.top - 14;
+      let list = mobileOrder;
+      let step = (availPx - nodeH) / (list.length - 1);
+      if (step < gapMin) { list = mobileTight; step = (availPx - nodeH) / (list.length - 1); }
+      // On very short screens show only as many as truly fit
+      if (step < 34) { const fit = Math.max(2, Math.floor((availPx - nodeH) / 34) + 1); list = mobileTight.slice(0, fit); step = list.length > 1 ? (availPx - nodeH) / (list.length - 1) : 0; }
+      step = Math.max(0, Math.min(step, 64));
+      nodeEls.forEach((el, i) => {
+        const n = nodes[i], idx = list.indexOf(n.a);
+        el.classList.toggle('mob-off', idx < 0);
+        if (idx < 0) return;
+        const cy = nodeH / 2 + idx * step;
+        n.ry = cy / fr.height * 100;
+        el.style.setProperty('--x', idx % 2 ? 73 : 27);
+        el.style.setProperty('--y', n.ry);
+        maxY = Math.max(maxY, n.ry);
+      });
+    } else {
+      const avail = (copyTop - fr.top - 36) / fr.height;
+      const k = clamp(avail / 0.78, 0.45, 1);
+      nodeEls.forEach((el, i) => {
+        const n = nodes[i];
+        el.classList.remove('mob-off');
+        n.ry = n.y * k;
+        if (visible(el)) maxY = Math.max(maxY, n.ry);
+        el.style.setProperty('--x', n.x);
+        el.style.setProperty('--y', n.ry);
+      });
+    }
+    span = maxY / 100 + 0.04;
   }
 
   const assess = $('assess'), beam = $('beam'), status = $('status'), stateEl = $('state'), countEl = $('count'), nextEl = $('next');
